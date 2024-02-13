@@ -1,5 +1,5 @@
-// Designer: Mor (Mordechai) Dahan, Avi Salmon,
-// Sep. 2022
+
+
 // ***********************************************
 
 `define ENABLE_ADC_CLOCK
