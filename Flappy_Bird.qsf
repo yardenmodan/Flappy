@@ -1,0 +1,1438 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Intel and sold by Intel or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+# Date created = 16:18:14  October 30, 2022
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Flappy_Bird_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name TOP_LEVEL_ENTITY Flappy_Bird
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:18:13  OCTOBER 30, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name VERILOG_FILE Buildings_Unit.v
+set_global_assignment -name VERILOG_FILE Priority_Drawing.v
+set_global_assignment -name SYSTEMVERILOG_FILE periphery_control.sv
+set_global_assignment -name VERILOG_FILE Flappy_Bird.v
+set_global_assignment -name SYSTEMVERILOG_FILE Bird_Draw.sv
+set_global_assignment -name VERILOG_FILE Bird_Move.v
+set_global_assignment -name VERILOG_FILE Bird_Unit.v
+set_global_assignment -name SYSTEMVERILOG_FILE Buildings_Move.sv
+set_global_assignment -name VERILOG_FILE randomizer_1.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_randomizer_1.vwf
+set_global_assignment -name VERILOG_FILE randomizer_2.v
+set_global_assignment -name SYSTEMVERILOG_FILE Buildings_Draw.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Lightning_Draw.sv
+set_global_assignment -name SYSTEMVERILOG_FILE analog_input.sv
+set_global_assignment -name VERILOG_FILE adc/synthesis/adc.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/adc_adc_0.v
+set_global_assignment -name VERILOG_FILE adc/simulation/submodules/altera_reset_controller.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_up_avalon_adv_adc.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_reset_synchronizer.v
+set_global_assignment -name VERILOG_FILE adc/simulation/submodules/DE10_Lite_ADC_Core_modular_adc_0.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/DE10_Lite_ADC_Core_modular_adc_0.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/chsel_code_converter_sw_to_hw.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_reset_controller.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_modular_adc_sequencer_ctrl.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_modular_adc_sequencer_csr.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_modular_adc_sequencer.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_modular_adc_sample_store_ram.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_modular_adc_sample_store.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_modular_adc_control_fsm.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v
+set_global_assignment -name VERILOG_FILE adc/synthesis/submodules/altera_modular_adc_control.v
+set_global_assignment -name SYSTEMVERILOG_FILE lcd_ctrl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Screens_dispaly.sv
+set_global_assignment -name VERILOG_FILE vga_controller.v
+set_global_assignment -name SYSTEMVERILOG_FILE seven_segment.sv
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name EXTERNAL_FLASH_FALLBACK_ADDRESS 00000000
+set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "PASSIVE SERIAL"
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE IMAGE WITH ERAM"
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_location_assignment PIN_N5 -to ADC_CLK_10
+set_location_assignment PIN_P11 -to MAX10_CLK1_50
+set_location_assignment PIN_N14 -to MAX10_CLK2_50
+set_location_assignment PIN_U17 -to DRAM_ADDR[0]
+set_location_assignment PIN_W19 -to DRAM_ADDR[1]
+set_location_assignment PIN_V18 -to DRAM_ADDR[2]
+set_location_assignment PIN_U18 -to DRAM_ADDR[3]
+set_location_assignment PIN_U19 -to DRAM_ADDR[4]
+set_location_assignment PIN_T18 -to DRAM_ADDR[5]
+set_location_assignment PIN_T19 -to DRAM_ADDR[6]
+set_location_assignment PIN_R18 -to DRAM_ADDR[7]
+set_location_assignment PIN_P18 -to DRAM_ADDR[8]
+set_location_assignment PIN_P19 -to DRAM_ADDR[9]
+set_location_assignment PIN_T20 -to DRAM_ADDR[10]
+set_location_assignment PIN_P20 -to DRAM_ADDR[11]
+set_location_assignment PIN_R20 -to DRAM_ADDR[12]
+set_location_assignment PIN_T21 -to DRAM_BA[0]
+set_location_assignment PIN_T22 -to DRAM_BA[1]
+set_location_assignment PIN_U21 -to DRAM_CAS_N
+set_location_assignment PIN_N22 -to DRAM_CKE
+set_location_assignment PIN_L14 -to DRAM_CLK
+set_location_assignment PIN_U20 -to DRAM_CS_N
+set_location_assignment PIN_Y21 -to DRAM_DQ[0]
+set_location_assignment PIN_Y20 -to DRAM_DQ[1]
+set_location_assignment PIN_AA22 -to DRAM_DQ[2]
+set_location_assignment PIN_AA21 -to DRAM_DQ[3]
+set_location_assignment PIN_Y22 -to DRAM_DQ[4]
+set_location_assignment PIN_W22 -to DRAM_DQ[5]
+set_location_assignment PIN_W20 -to DRAM_DQ[6]
+set_location_assignment PIN_V21 -to DRAM_DQ[7]
+set_location_assignment PIN_P21 -to DRAM_DQ[8]
+set_location_assignment PIN_J22 -to DRAM_DQ[9]
+set_location_assignment PIN_H21 -to DRAM_DQ[10]
+set_location_assignment PIN_H22 -to DRAM_DQ[11]
+set_location_assignment PIN_G22 -to DRAM_DQ[12]
+set_location_assignment PIN_G20 -to DRAM_DQ[13]
+set_location_assignment PIN_G19 -to DRAM_DQ[14]
+set_location_assignment PIN_F22 -to DRAM_DQ[15]
+set_location_assignment PIN_V22 -to DRAM_LDQM
+set_location_assignment PIN_U22 -to DRAM_RAS_N
+set_location_assignment PIN_J21 -to DRAM_UDQM
+set_location_assignment PIN_V20 -to DRAM_WE_N
+set_location_assignment PIN_C14 -to HEX0[0]
+set_location_assignment PIN_E15 -to HEX0[1]
+set_location_assignment PIN_C15 -to HEX0[2]
+set_location_assignment PIN_C16 -to HEX0[3]
+set_location_assignment PIN_E16 -to HEX0[4]
+set_location_assignment PIN_D17 -to HEX0[5]
+set_location_assignment PIN_C17 -to HEX0[6]
+set_location_assignment PIN_D15 -to HEX0[7]
+set_location_assignment PIN_C18 -to HEX1[0]
+set_location_assignment PIN_D18 -to HEX1[1]
+set_location_assignment PIN_E18 -to HEX1[2]
+set_location_assignment PIN_B16 -to HEX1[3]
+set_location_assignment PIN_A17 -to HEX1[4]
+set_location_assignment PIN_A18 -to HEX1[5]
+set_location_assignment PIN_B17 -to HEX1[6]
+set_location_assignment PIN_A16 -to HEX1[7]
+set_location_assignment PIN_B20 -to HEX2[0]
+set_location_assignment PIN_A20 -to HEX2[1]
+set_location_assignment PIN_B19 -to HEX2[2]
+set_location_assignment PIN_A21 -to HEX2[3]
+set_location_assignment PIN_B21 -to HEX2[4]
+set_location_assignment PIN_C22 -to HEX2[5]
+set_location_assignment PIN_B22 -to HEX2[6]
+set_location_assignment PIN_A19 -to HEX2[7]
+set_location_assignment PIN_F21 -to HEX3[0]
+set_location_assignment PIN_E22 -to HEX3[1]
+set_location_assignment PIN_E21 -to HEX3[2]
+set_location_assignment PIN_C19 -to HEX3[3]
+set_location_assignment PIN_C20 -to HEX3[4]
+set_location_assignment PIN_D19 -to HEX3[5]
+set_location_assignment PIN_E17 -to HEX3[6]
+set_location_assignment PIN_D22 -to HEX3[7]
+set_location_assignment PIN_F18 -to HEX4[0]
+set_location_assignment PIN_E20 -to HEX4[1]
+set_location_assignment PIN_E19 -to HEX4[2]
+set_location_assignment PIN_J18 -to HEX4[3]
+set_location_assignment PIN_H19 -to HEX4[4]
+set_location_assignment PIN_F19 -to HEX4[5]
+set_location_assignment PIN_F20 -to HEX4[6]
+set_location_assignment PIN_F17 -to HEX4[7]
+set_location_assignment PIN_J20 -to HEX5[0]
+set_location_assignment PIN_K20 -to HEX5[1]
+set_location_assignment PIN_L18 -to HEX5[2]
+set_location_assignment PIN_N18 -to HEX5[3]
+set_location_assignment PIN_M20 -to HEX5[4]
+set_location_assignment PIN_N19 -to HEX5[5]
+set_location_assignment PIN_N20 -to HEX5[6]
+set_location_assignment PIN_L19 -to HEX5[7]
+set_location_assignment PIN_B8 -to KEY[0]
+set_location_assignment PIN_A7 -to KEY[1]
+set_location_assignment PIN_A8 -to LEDR[0]
+set_location_assignment PIN_A9 -to LEDR[1]
+set_location_assignment PIN_A10 -to LEDR[2]
+set_location_assignment PIN_B10 -to LEDR[3]
+set_location_assignment PIN_D13 -to LEDR[4]
+set_location_assignment PIN_C13 -to LEDR[5]
+set_location_assignment PIN_E14 -to LEDR[6]
+set_location_assignment PIN_D14 -to LEDR[7]
+set_location_assignment PIN_A11 -to LEDR[8]
+set_location_assignment PIN_B11 -to LEDR[9]
+set_location_assignment PIN_C10 -to SW[0]
+set_location_assignment PIN_C11 -to SW[1]
+set_location_assignment PIN_D12 -to SW[2]
+set_location_assignment PIN_C12 -to SW[3]
+set_location_assignment PIN_A12 -to SW[4]
+set_location_assignment PIN_B12 -to SW[5]
+set_location_assignment PIN_A13 -to SW[6]
+set_location_assignment PIN_A14 -to SW[7]
+set_location_assignment PIN_B14 -to SW[8]
+set_location_assignment PIN_F15 -to SW[9]
+set_location_assignment PIN_P1 -to VGA_B[0]
+set_location_assignment PIN_T1 -to VGA_B[1]
+set_location_assignment PIN_P4 -to VGA_B[2]
+set_location_assignment PIN_N2 -to VGA_B[3]
+set_location_assignment PIN_W1 -to VGA_G[0]
+set_location_assignment PIN_T2 -to VGA_G[1]
+set_location_assignment PIN_R2 -to VGA_G[2]
+set_location_assignment PIN_R1 -to VGA_G[3]
+set_location_assignment PIN_N3 -to VGA_HS
+set_location_assignment PIN_AA1 -to VGA_R[0]
+set_location_assignment PIN_V1 -to VGA_R[1]
+set_location_assignment PIN_Y2 -to VGA_R[2]
+set_location_assignment PIN_Y1 -to VGA_R[3]
+set_location_assignment PIN_N1 -to VGA_VS
+set_location_assignment PIN_AB16 -to GSENSOR_CS_N
+set_location_assignment PIN_Y14 -to GSENSOR_INT[1]
+set_location_assignment PIN_Y13 -to GSENSOR_INT[2]
+set_location_assignment PIN_AB15 -to GSENSOR_SCLK
+set_location_assignment PIN_V11 -to GSENSOR_SDI
+set_location_assignment PIN_V12 -to GSENSOR_SDO
+set_location_assignment PIN_AB5 -to ARDUINO_IO[0]
+set_location_assignment PIN_AB6 -to ARDUINO_IO[1]
+set_location_assignment PIN_AB7 -to ARDUINO_IO[2]
+set_location_assignment PIN_AB8 -to ARDUINO_IO[3]
+set_location_assignment PIN_AB9 -to ARDUINO_IO[4]
+set_location_assignment PIN_Y10 -to ARDUINO_IO[5]
+set_location_assignment PIN_AA11 -to ARDUINO_IO[6]
+set_location_assignment PIN_AA12 -to ARDUINO_IO[7]
+set_location_assignment PIN_AB17 -to ARDUINO_IO[8]
+set_location_assignment PIN_AA17 -to ARDUINO_IO[9]
+set_location_assignment PIN_AB19 -to ARDUINO_IO[10]
+set_location_assignment PIN_AA19 -to ARDUINO_IO[11]
+set_location_assignment PIN_Y19 -to ARDUINO_IO[12]
+set_location_assignment PIN_AB20 -to ARDUINO_IO[13]
+set_location_assignment PIN_AB21 -to ARDUINO_IO[14]
+set_location_assignment PIN_AA20 -to ARDUINO_IO[15]
+set_location_assignment PIN_F16 -to ARDUINO_RESET_N
+set_location_assignment PIN_V10 -to GPIO[0]
+set_location_assignment PIN_W10 -to GPIO[1]
+set_location_assignment PIN_V9 -to GPIO[2]
+set_location_assignment PIN_W9 -to GPIO[3]
+set_location_assignment PIN_V8 -to GPIO[4]
+set_location_assignment PIN_W8 -to GPIO[5]
+set_location_assignment PIN_V7 -to GPIO[6]
+set_location_assignment PIN_W7 -to GPIO[7]
+set_location_assignment PIN_W6 -to GPIO[8]
+set_location_assignment PIN_V5 -to GPIO[9]
+set_location_assignment PIN_W5 -to GPIO[10]
+set_location_assignment PIN_AA15 -to GPIO[11]
+set_location_assignment PIN_AA14 -to GPIO[12]
+set_location_assignment PIN_W13 -to GPIO[13]
+set_location_assignment PIN_W12 -to GPIO[14]
+set_location_assignment PIN_AB13 -to GPIO[15]
+set_location_assignment PIN_AB12 -to GPIO[16]
+set_location_assignment PIN_Y11 -to GPIO[17]
+set_location_assignment PIN_AB11 -to GPIO[18]
+set_location_assignment PIN_W11 -to GPIO[19]
+set_location_assignment PIN_AB10 -to GPIO[20]
+set_location_assignment PIN_AA10 -to GPIO[21]
+set_location_assignment PIN_AA9 -to GPIO[22]
+set_location_assignment PIN_Y8 -to GPIO[23]
+set_location_assignment PIN_AA8 -to GPIO[24]
+set_location_assignment PIN_Y7 -to GPIO[25]
+set_location_assignment PIN_AA7 -to GPIO[26]
+set_location_assignment PIN_Y6 -to GPIO[27]
+set_location_assignment PIN_AA6 -to GPIO[28]
+set_location_assignment PIN_Y5 -to GPIO[29]
+set_location_assignment PIN_AA5 -to GPIO[30]
+set_location_assignment PIN_Y4 -to GPIO[31]
+set_location_assignment PIN_AB3 -to GPIO[32]
+set_location_assignment PIN_Y3 -to GPIO[33]
+set_location_assignment PIN_AB2 -to GPIO[34]
+set_location_assignment PIN_AA2 -to GPIO[35]
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_lightning.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_lightning_move.vwf
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_simulation
+set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -section_id eda_simulation
+set_global_assignment -name VECTOR_WAVEFORM_FILE testing.vwf
+set_global_assignment -name SYSTEMVERILOG_FILE Lightning_Unit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Lightning_Move.sv
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_lightning_draw.vwf
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE lightning_unit_st.stp
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_bird_unit.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_randomizer_2.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_building_unit.vwf
+set_global_assignment -name SYSTEMVERILOG_FILE Background_Draw.sv
+set_global_assignment -name VERILOG_FILE shooter.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_light_state.vwf
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CLK_10
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_RESET_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[35]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[34]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[33]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[32]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[31]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[30]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[29]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[28]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[25]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[24]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_CS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_INT[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_INT[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_SCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_SDI
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_SDO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[1]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK1_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK2_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY
+set_global_assignment -name SYSTEMVERILOG_FILE light_state.sv
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id AMEN
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to MAX10_CLK1_50 -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=2048" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to AMEN|gnd -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=2048" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id AMEN
+set_global_assignment -name SIGNALTAP_FILE lightning_unit_st.stp
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_stage_light.vwf
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to AMEN|gnd -section_id AMEN
+set_global_assignment -name SYSTEMVERILOG_FILE slowing_down.sv
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to AMEN|vcc -section_id AMEN
+set_global_assignment -name SYSTEMVERILOG_FILE gameover.sv
+set_global_assignment -name VERILOG_FILE memorizer.v
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to AMEN|gnd -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to AMEN|vcc -section_id AMEN
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to AMEN|vcc -section_id AMEN
+set_global_assignment -name VERILOG_FILE counter_sec.v
+set_global_assignment -name VERILOG_FILE h2d.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform_h2d.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|collision_light_1" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|collision_light_2" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|collision_light_3" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|in_air_1" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|in_air_2" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|in_air_3" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|light_num[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|light_num[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|restart_light" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|shootN" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[42] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[43] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[44] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[45] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[46] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[47] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[48] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[49] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[50] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[51] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[52] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[53] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[54] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[55] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[56] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[57] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[58] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[59] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[60] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[61] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[62] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[63] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[64] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[65] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[66] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[67] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[68] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[69] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[70] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[71] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[72] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[73] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[74] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[75] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[76] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[77] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[78] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[79] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[80] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[81] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[82] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[83] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[84] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[85] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[86] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[87] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[88] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[89] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[90] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[91] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[92] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[93] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[94] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[95] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[96] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[97] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[98] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[99] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[100] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[101] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[102] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[103] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[104] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[105] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[106] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[107] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[108] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[109] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[110] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[111] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[112] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[113] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[114] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[115] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[116] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[117] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[118] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[119] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[120] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[121] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[122] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[123] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[124] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[125] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[126] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[127] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[128] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[129] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[130] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[131] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[132] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[133] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[134] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[135] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[136] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[137] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[138] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[139] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[140] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[141] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[142] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[143] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[144] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[145] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[146] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[147] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[148] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[149] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[150] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[151] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[152] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[153] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[154] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[155] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[156] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[157] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[158] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[159] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[160] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[161] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[162] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[163] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[164] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[165] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[166] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[167] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[168] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[169] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[170] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[171] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[172] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[173] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[174] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[175] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[176] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[177] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[178] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[179] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[180] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[181] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[182] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[183] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[184] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[185] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[186] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[187] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[188] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[189] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[190] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[191] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[192] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[193] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[194] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[195] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[196] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[197] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[198] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[199] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[200] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[201] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|collision_light_1" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|collision_light_2" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|collision_light_3" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|in_air_1" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|in_air_2" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|in_air_3" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|light_num[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|light_num[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|restart_light" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|shootN" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_1[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[42] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[43] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[44] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[45] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[46] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[47] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[48] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[49] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[50] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[51] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[52] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[53] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[54] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[55] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[56] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[57] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[58] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[59] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[60] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[61] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[62] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[63] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[64] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[65] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[66] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[67] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[68] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[69] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[70] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[71] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[72] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[73] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_2[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[74] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[75] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[76] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[77] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[78] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[79] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[80] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[81] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[82] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[83] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[84] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[85] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[86] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[87] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[88] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[89] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[90] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[91] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[92] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[93] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[94] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[95] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[96] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[97] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[98] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[99] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[100] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[101] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[102] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[103] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[104] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[105] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_x_light_3[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[106] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[107] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[108] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[109] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[110] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[111] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[112] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[113] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[114] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[115] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[116] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[117] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[118] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[119] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[120] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[121] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[122] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[123] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[124] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[125] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[126] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[127] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[128] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[129] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[130] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[131] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[132] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[133] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[134] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[135] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[136] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[137] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_1[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[138] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[139] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[140] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[141] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[142] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[143] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[144] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[145] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[146] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[147] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[148] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[149] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[150] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[151] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[152] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[153] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[154] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[155] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[156] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[157] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[158] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[159] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[160] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[161] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[162] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[163] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[164] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[165] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[166] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[167] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[168] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[169] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_2[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[170] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[171] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[172] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[173] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[174] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[175] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[176] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[177] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[178] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[179] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[180] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[181] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[182] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[183] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[184] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[185] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[186] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[187] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[188] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[189] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[190] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[191] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[192] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[193] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[194] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[195] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[196] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[197] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[198] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[199] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[200] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[201] -to "Lightning_Unit:lightning_unit|Lightning_Move:lightning_move|topLeft_y_light_3[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[202] -to "light_state:light_state|blue_state_light[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[203] -to "light_state:light_state|blue_state_light[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[204] -to "light_state:light_state|blue_state_light[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[205] -to "light_state:light_state|blue_state_light[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[206] -to "light_state:light_state|blue_state_light[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[207] -to "light_state:light_state|blue_state_light[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[208] -to "light_state:light_state|blue_state_light[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[209] -to "light_state:light_state|blue_state_light[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[210] -to "light_state:light_state|blue_state_light[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[211] -to "light_state:light_state|blue_state_light[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[212] -to "light_state:light_state|blue_state_light[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[213] -to "light_state:light_state|blue_state_light[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[214] -to "light_state:light_state|blue_state_light[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[215] -to "light_state:light_state|blue_state_light[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[216] -to "light_state:light_state|blue_state_light[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[217] -to "light_state:light_state|blue_state_light[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[218] -to "light_state:light_state|blue_state_light[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[219] -to "light_state:light_state|blue_state_light[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[220] -to "light_state:light_state|blue_state_light[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[221] -to "light_state:light_state|blue_state_light[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[222] -to "light_state:light_state|blue_state_light[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[223] -to "light_state:light_state|blue_state_light[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[224] -to "light_state:light_state|blue_state_light[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[225] -to "light_state:light_state|blue_state_light[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[226] -to "light_state:light_state|blue_state_light[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[227] -to "light_state:light_state|blue_state_light[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[228] -to "light_state:light_state|blue_state_light[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[229] -to "light_state:light_state|blue_state_light[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[230] -to "light_state:light_state|blue_state_light[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[231] -to "light_state:light_state|blue_state_light[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[232] -to "light_state:light_state|blue_state_light[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[233] -to "light_state:light_state|blue_state_light[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[234] -to "light_state:light_state|charging_right[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[235] -to "light_state:light_state|charging_right[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[236] -to "light_state:light_state|charging_right[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[237] -to "light_state:light_state|charging_right[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[238] -to "light_state:light_state|charging_right[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[239] -to "light_state:light_state|charging_right[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[240] -to "light_state:light_state|charging_right[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[241] -to "light_state:light_state|charging_right[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[242] -to "light_state:light_state|charging_right[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[243] -to "light_state:light_state|charging_right[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[244] -to "light_state:light_state|charging_right[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[245] -to "light_state:light_state|charging_right[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[246] -to "light_state:light_state|charging_right[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[247] -to "light_state:light_state|charging_right[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[248] -to "light_state:light_state|charging_right[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[249] -to "light_state:light_state|charging_right[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[250] -to "light_state:light_state|charging_right[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[251] -to "light_state:light_state|charging_right[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[252] -to "light_state:light_state|charging_right[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[253] -to "light_state:light_state|charging_right[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[254] -to "light_state:light_state|charging_right[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[255] -to "light_state:light_state|charging_right[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[256] -to "light_state:light_state|charging_right[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[257] -to "light_state:light_state|charging_right[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[258] -to "light_state:light_state|charging_right[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[259] -to "light_state:light_state|charging_right[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[260] -to "light_state:light_state|charging_right[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[261] -to "light_state:light_state|charging_right[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[262] -to "light_state:light_state|charging_right[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[263] -to "light_state:light_state|charging_right[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[264] -to "light_state:light_state|charging_right[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[265] -to "light_state:light_state|charging_right[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[266] -to "light_state:light_state|checker[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[267] -to "light_state:light_state|checker[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[268] -to "light_state:light_state|checker[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[269] -to "light_state:light_state|checker[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[270] -to "light_state:light_state|clk" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[271] -to "light_state:light_state|counter[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[272] -to "light_state:light_state|counter[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[273] -to "light_state:light_state|counter[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[274] -to "light_state:light_state|counter[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[275] -to "light_state:light_state|counter[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[276] -to "light_state:light_state|counter[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[277] -to "light_state:light_state|counter[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[278] -to "light_state:light_state|counter[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[279] -to "light_state:light_state|counter[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[280] -to "light_state:light_state|counter[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[281] -to "light_state:light_state|counter[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[282] -to "light_state:light_state|counter[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[283] -to "light_state:light_state|counter[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[284] -to "light_state:light_state|counter[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[285] -to "light_state:light_state|counter[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[286] -to "light_state:light_state|counter[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[287] -to "light_state:light_state|counter[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[288] -to "light_state:light_state|counter[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[289] -to "light_state:light_state|counter[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[290] -to "light_state:light_state|counter[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[291] -to "light_state:light_state|counter[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[292] -to "light_state:light_state|counter[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[293] -to "light_state:light_state|counter[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[294] -to "light_state:light_state|counter[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[295] -to "light_state:light_state|counter[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[296] -to "light_state:light_state|counter[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[297] -to "light_state:light_state|counter[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[298] -to "light_state:light_state|counter[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[299] -to "light_state:light_state|counter[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[300] -to "light_state:light_state|counter[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[301] -to "light_state:light_state|counter[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[302] -to "light_state:light_state|counter[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[303] -to "light_state:light_state|draw_state_light" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[304] -to "light_state:light_state|green_state_light[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[305] -to "light_state:light_state|green_state_light[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[306] -to "light_state:light_state|green_state_light[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[307] -to "light_state:light_state|green_state_light[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[308] -to "light_state:light_state|green_state_light[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[309] -to "light_state:light_state|green_state_light[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[310] -to "light_state:light_state|green_state_light[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[311] -to "light_state:light_state|green_state_light[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[312] -to "light_state:light_state|green_state_light[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[313] -to "light_state:light_state|green_state_light[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[314] -to "light_state:light_state|green_state_light[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[315] -to "light_state:light_state|green_state_light[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[316] -to "light_state:light_state|green_state_light[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[317] -to "light_state:light_state|green_state_light[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[318] -to "light_state:light_state|green_state_light[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[319] -to "light_state:light_state|green_state_light[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[320] -to "light_state:light_state|green_state_light[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[321] -to "light_state:light_state|green_state_light[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[322] -to "light_state:light_state|green_state_light[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[323] -to "light_state:light_state|green_state_light[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[324] -to "light_state:light_state|green_state_light[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[325] -to "light_state:light_state|green_state_light[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[326] -to "light_state:light_state|green_state_light[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[327] -to "light_state:light_state|green_state_light[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[328] -to "light_state:light_state|green_state_light[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[329] -to "light_state:light_state|green_state_light[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[330] -to "light_state:light_state|green_state_light[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[331] -to "light_state:light_state|green_state_light[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[332] -to "light_state:light_state|green_state_light[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[333] -to "light_state:light_state|green_state_light[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[334] -to "light_state:light_state|green_state_light[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[335] -to "light_state:light_state|green_state_light[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[336] -to "light_state:light_state|light_num[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[337] -to "light_state:light_state|light_num[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[338] -to "light_state:light_state|pxl_x[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[339] -to "light_state:light_state|pxl_x[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[340] -to "light_state:light_state|pxl_x[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[341] -to "light_state:light_state|pxl_x[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[342] -to "light_state:light_state|pxl_x[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[343] -to "light_state:light_state|pxl_x[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[344] -to "light_state:light_state|pxl_x[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[345] -to "light_state:light_state|pxl_x[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[346] -to "light_state:light_state|pxl_x[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[347] -to "light_state:light_state|pxl_x[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[348] -to "light_state:light_state|pxl_x[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[349] -to "light_state:light_state|pxl_x[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[350] -to "light_state:light_state|pxl_x[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[351] -to "light_state:light_state|pxl_x[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[352] -to "light_state:light_state|pxl_x[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[353] -to "light_state:light_state|pxl_x[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[354] -to "light_state:light_state|pxl_x[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[355] -to "light_state:light_state|pxl_x[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[356] -to "light_state:light_state|pxl_x[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[357] -to "light_state:light_state|pxl_x[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[358] -to "light_state:light_state|pxl_x[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[359] -to "light_state:light_state|pxl_x[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[360] -to "light_state:light_state|pxl_x[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[361] -to "light_state:light_state|pxl_x[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[362] -to "light_state:light_state|pxl_x[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[363] -to "light_state:light_state|pxl_x[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[364] -to "light_state:light_state|pxl_x[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[365] -to "light_state:light_state|pxl_x[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[366] -to "light_state:light_state|pxl_x[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[367] -to "light_state:light_state|pxl_x[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[368] -to "light_state:light_state|pxl_x[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[369] -to "light_state:light_state|pxl_x[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[370] -to "light_state:light_state|pxl_y[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[371] -to "light_state:light_state|pxl_y[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[372] -to "light_state:light_state|pxl_y[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[373] -to "light_state:light_state|pxl_y[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[374] -to "light_state:light_state|pxl_y[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[375] -to "light_state:light_state|pxl_y[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[376] -to "light_state:light_state|pxl_y[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[377] -to "light_state:light_state|pxl_y[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[378] -to "light_state:light_state|pxl_y[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[379] -to "light_state:light_state|pxl_y[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[380] -to "light_state:light_state|pxl_y[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[381] -to "light_state:light_state|pxl_y[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[382] -to "light_state:light_state|pxl_y[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[383] -to "light_state:light_state|pxl_y[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[384] -to "light_state:light_state|pxl_y[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[385] -to "light_state:light_state|pxl_y[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[386] -to "light_state:light_state|pxl_y[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[387] -to "light_state:light_state|pxl_y[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[388] -to "light_state:light_state|pxl_y[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[389] -to "light_state:light_state|pxl_y[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[390] -to "light_state:light_state|pxl_y[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[391] -to "light_state:light_state|pxl_y[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[392] -to "light_state:light_state|pxl_y[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[393] -to "light_state:light_state|pxl_y[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[394] -to "light_state:light_state|pxl_y[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[395] -to "light_state:light_state|pxl_y[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[396] -to "light_state:light_state|pxl_y[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[397] -to "light_state:light_state|pxl_y[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[398] -to "light_state:light_state|pxl_y[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[399] -to "light_state:light_state|pxl_y[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[400] -to "light_state:light_state|pxl_y[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[401] -to "light_state:light_state|pxl_y[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[402] -to "light_state:light_state|red_state_light[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[403] -to "light_state:light_state|red_state_light[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[404] -to "light_state:light_state|red_state_light[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[405] -to "light_state:light_state|red_state_light[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[406] -to "light_state:light_state|red_state_light[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[407] -to "light_state:light_state|red_state_light[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[408] -to "light_state:light_state|red_state_light[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[409] -to "light_state:light_state|red_state_light[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[410] -to "light_state:light_state|red_state_light[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[411] -to "light_state:light_state|red_state_light[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[412] -to "light_state:light_state|red_state_light[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[413] -to "light_state:light_state|red_state_light[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[414] -to "light_state:light_state|red_state_light[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[415] -to "light_state:light_state|red_state_light[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[416] -to "light_state:light_state|red_state_light[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[417] -to "light_state:light_state|red_state_light[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[418] -to "light_state:light_state|red_state_light[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[419] -to "light_state:light_state|red_state_light[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[420] -to "light_state:light_state|red_state_light[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[421] -to "light_state:light_state|red_state_light[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[422] -to "light_state:light_state|red_state_light[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[423] -to "light_state:light_state|red_state_light[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[424] -to "light_state:light_state|red_state_light[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[425] -to "light_state:light_state|red_state_light[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[426] -to "light_state:light_state|red_state_light[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[427] -to "light_state:light_state|red_state_light[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[428] -to "light_state:light_state|red_state_light[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[429] -to "light_state:light_state|red_state_light[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[430] -to "light_state:light_state|red_state_light[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[431] -to "light_state:light_state|red_state_light[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[432] -to "light_state:light_state|red_state_light[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[433] -to "light_state:light_state|red_state_light[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[434] -to "light_state:light_state|resetN" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[435] -to "light_state:light_state|restart_light" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[436] -to "periphery_control:periphery_control_inst|A" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[437] -to "periphery_control:periphery_control_inst|B" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[202] -to "light_state:light_state|blue_state_light[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[203] -to "light_state:light_state|blue_state_light[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[204] -to "light_state:light_state|blue_state_light[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[205] -to "light_state:light_state|blue_state_light[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[206] -to "light_state:light_state|blue_state_light[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[207] -to "light_state:light_state|blue_state_light[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[208] -to "light_state:light_state|blue_state_light[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[209] -to "light_state:light_state|blue_state_light[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[210] -to "light_state:light_state|blue_state_light[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[211] -to "light_state:light_state|blue_state_light[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[212] -to "light_state:light_state|blue_state_light[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[213] -to "light_state:light_state|blue_state_light[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[214] -to "light_state:light_state|blue_state_light[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[215] -to "light_state:light_state|blue_state_light[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[216] -to "light_state:light_state|blue_state_light[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[217] -to "light_state:light_state|blue_state_light[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[218] -to "light_state:light_state|blue_state_light[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[219] -to "light_state:light_state|blue_state_light[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[220] -to "light_state:light_state|blue_state_light[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[221] -to "light_state:light_state|blue_state_light[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[222] -to "light_state:light_state|blue_state_light[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[223] -to "light_state:light_state|blue_state_light[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[224] -to "light_state:light_state|blue_state_light[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[225] -to "light_state:light_state|blue_state_light[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[226] -to "light_state:light_state|blue_state_light[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[227] -to "light_state:light_state|blue_state_light[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[228] -to "light_state:light_state|blue_state_light[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[229] -to "light_state:light_state|blue_state_light[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[230] -to "light_state:light_state|blue_state_light[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[231] -to "light_state:light_state|blue_state_light[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[232] -to "light_state:light_state|blue_state_light[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[233] -to "light_state:light_state|blue_state_light[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[234] -to "light_state:light_state|charging_right[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[235] -to "light_state:light_state|charging_right[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[236] -to "light_state:light_state|charging_right[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[237] -to "light_state:light_state|charging_right[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[238] -to "light_state:light_state|charging_right[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[239] -to "light_state:light_state|charging_right[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[240] -to "light_state:light_state|charging_right[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[241] -to "light_state:light_state|charging_right[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[242] -to "light_state:light_state|charging_right[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[243] -to "light_state:light_state|charging_right[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[244] -to "light_state:light_state|charging_right[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[245] -to "light_state:light_state|charging_right[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[246] -to "light_state:light_state|charging_right[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[247] -to "light_state:light_state|charging_right[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[248] -to "light_state:light_state|charging_right[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[249] -to "light_state:light_state|charging_right[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[250] -to "light_state:light_state|charging_right[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[251] -to "light_state:light_state|charging_right[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[252] -to "light_state:light_state|charging_right[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[253] -to "light_state:light_state|charging_right[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[254] -to "light_state:light_state|charging_right[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[255] -to "light_state:light_state|charging_right[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[256] -to "light_state:light_state|charging_right[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[257] -to "light_state:light_state|charging_right[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[258] -to "light_state:light_state|charging_right[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[259] -to "light_state:light_state|charging_right[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[260] -to "light_state:light_state|charging_right[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[261] -to "light_state:light_state|charging_right[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[262] -to "light_state:light_state|charging_right[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[263] -to "light_state:light_state|charging_right[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[264] -to "light_state:light_state|charging_right[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[265] -to "light_state:light_state|charging_right[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[266] -to "light_state:light_state|checker[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[267] -to "light_state:light_state|checker[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[268] -to "light_state:light_state|checker[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[269] -to "light_state:light_state|checker[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[270] -to "light_state:light_state|clk" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[271] -to "light_state:light_state|counter[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[272] -to "light_state:light_state|counter[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[273] -to "light_state:light_state|counter[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[274] -to "light_state:light_state|counter[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[275] -to "light_state:light_state|counter[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[276] -to "light_state:light_state|counter[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[277] -to "light_state:light_state|counter[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[278] -to "light_state:light_state|counter[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[279] -to "light_state:light_state|counter[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[280] -to "light_state:light_state|counter[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[281] -to "light_state:light_state|counter[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[282] -to "light_state:light_state|counter[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[283] -to "light_state:light_state|counter[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[284] -to "light_state:light_state|counter[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[285] -to "light_state:light_state|counter[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[286] -to "light_state:light_state|counter[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[287] -to "light_state:light_state|counter[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[288] -to "light_state:light_state|counter[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[289] -to "light_state:light_state|counter[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[290] -to "light_state:light_state|counter[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[291] -to "light_state:light_state|counter[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[292] -to "light_state:light_state|counter[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[293] -to "light_state:light_state|counter[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[294] -to "light_state:light_state|counter[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[295] -to "light_state:light_state|counter[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[296] -to "light_state:light_state|counter[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[297] -to "light_state:light_state|counter[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[298] -to "light_state:light_state|counter[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[299] -to "light_state:light_state|counter[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[300] -to "light_state:light_state|counter[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[301] -to "light_state:light_state|counter[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[302] -to "light_state:light_state|counter[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[303] -to "light_state:light_state|draw_state_light" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[304] -to "light_state:light_state|green_state_light[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[305] -to "light_state:light_state|green_state_light[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[306] -to "light_state:light_state|green_state_light[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[307] -to "light_state:light_state|green_state_light[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[308] -to "light_state:light_state|green_state_light[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[309] -to "light_state:light_state|green_state_light[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[310] -to "light_state:light_state|green_state_light[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[311] -to "light_state:light_state|green_state_light[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[312] -to "light_state:light_state|green_state_light[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[313] -to "light_state:light_state|green_state_light[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[314] -to "light_state:light_state|green_state_light[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[315] -to "light_state:light_state|green_state_light[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[316] -to "light_state:light_state|green_state_light[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[317] -to "light_state:light_state|green_state_light[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[318] -to "light_state:light_state|green_state_light[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[319] -to "light_state:light_state|green_state_light[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[320] -to "light_state:light_state|green_state_light[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[321] -to "light_state:light_state|green_state_light[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[322] -to "light_state:light_state|green_state_light[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[323] -to "light_state:light_state|green_state_light[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[324] -to "light_state:light_state|green_state_light[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[325] -to "light_state:light_state|green_state_light[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[326] -to "light_state:light_state|green_state_light[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[327] -to "light_state:light_state|green_state_light[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[328] -to "light_state:light_state|green_state_light[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[329] -to "light_state:light_state|green_state_light[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[330] -to "light_state:light_state|green_state_light[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[331] -to "light_state:light_state|green_state_light[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[332] -to "light_state:light_state|green_state_light[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[333] -to "light_state:light_state|green_state_light[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[334] -to "light_state:light_state|green_state_light[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[335] -to "light_state:light_state|green_state_light[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[336] -to "light_state:light_state|light_num[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[337] -to "light_state:light_state|light_num[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[338] -to "light_state:light_state|pxl_x[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[339] -to "light_state:light_state|pxl_x[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[340] -to "light_state:light_state|pxl_x[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[341] -to "light_state:light_state|pxl_x[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[342] -to "light_state:light_state|pxl_x[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[343] -to "light_state:light_state|pxl_x[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[344] -to "light_state:light_state|pxl_x[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[345] -to "light_state:light_state|pxl_x[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[346] -to "light_state:light_state|pxl_x[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[347] -to "light_state:light_state|pxl_x[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[348] -to "light_state:light_state|pxl_x[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[349] -to "light_state:light_state|pxl_x[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[350] -to "light_state:light_state|pxl_x[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[351] -to "light_state:light_state|pxl_x[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[352] -to "light_state:light_state|pxl_x[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[353] -to "light_state:light_state|pxl_x[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[354] -to "light_state:light_state|pxl_x[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[355] -to "light_state:light_state|pxl_x[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[356] -to "light_state:light_state|pxl_x[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[357] -to "light_state:light_state|pxl_x[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[358] -to "light_state:light_state|pxl_x[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[359] -to "light_state:light_state|pxl_x[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[360] -to "light_state:light_state|pxl_x[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[361] -to "light_state:light_state|pxl_x[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[362] -to "light_state:light_state|pxl_x[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[363] -to "light_state:light_state|pxl_x[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[364] -to "light_state:light_state|pxl_x[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[365] -to "light_state:light_state|pxl_x[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[366] -to "light_state:light_state|pxl_x[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[367] -to "light_state:light_state|pxl_x[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[368] -to "light_state:light_state|pxl_x[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[369] -to "light_state:light_state|pxl_x[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[370] -to "light_state:light_state|pxl_y[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[371] -to "light_state:light_state|pxl_y[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[372] -to "light_state:light_state|pxl_y[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[373] -to "light_state:light_state|pxl_y[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[374] -to "light_state:light_state|pxl_y[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[375] -to "light_state:light_state|pxl_y[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[376] -to "light_state:light_state|pxl_y[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[377] -to "light_state:light_state|pxl_y[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[378] -to "light_state:light_state|pxl_y[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[379] -to "light_state:light_state|pxl_y[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[380] -to "light_state:light_state|pxl_y[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[381] -to "light_state:light_state|pxl_y[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[382] -to "light_state:light_state|pxl_y[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[383] -to "light_state:light_state|pxl_y[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[384] -to "light_state:light_state|pxl_y[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[385] -to "light_state:light_state|pxl_y[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[386] -to "light_state:light_state|pxl_y[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[387] -to "light_state:light_state|pxl_y[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[388] -to "light_state:light_state|pxl_y[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[389] -to "light_state:light_state|pxl_y[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[390] -to "light_state:light_state|pxl_y[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[391] -to "light_state:light_state|pxl_y[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[392] -to "light_state:light_state|pxl_y[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[393] -to "light_state:light_state|pxl_y[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[394] -to "light_state:light_state|pxl_y[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[395] -to "light_state:light_state|pxl_y[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[396] -to "light_state:light_state|pxl_y[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[397] -to "light_state:light_state|pxl_y[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[398] -to "light_state:light_state|pxl_y[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[399] -to "light_state:light_state|pxl_y[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[400] -to "light_state:light_state|pxl_y[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[401] -to "light_state:light_state|pxl_y[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[402] -to "light_state:light_state|red_state_light[0]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[403] -to "light_state:light_state|red_state_light[10]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[404] -to "light_state:light_state|red_state_light[11]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[405] -to "light_state:light_state|red_state_light[12]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[406] -to "light_state:light_state|red_state_light[13]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[407] -to "light_state:light_state|red_state_light[14]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[408] -to "light_state:light_state|red_state_light[15]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[409] -to "light_state:light_state|red_state_light[16]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[410] -to "light_state:light_state|red_state_light[17]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[411] -to "light_state:light_state|red_state_light[18]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[412] -to "light_state:light_state|red_state_light[19]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[413] -to "light_state:light_state|red_state_light[1]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[414] -to "light_state:light_state|red_state_light[20]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[415] -to "light_state:light_state|red_state_light[21]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[416] -to "light_state:light_state|red_state_light[22]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[417] -to "light_state:light_state|red_state_light[23]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[418] -to "light_state:light_state|red_state_light[24]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[419] -to "light_state:light_state|red_state_light[25]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[420] -to "light_state:light_state|red_state_light[26]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[421] -to "light_state:light_state|red_state_light[27]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[422] -to "light_state:light_state|red_state_light[28]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[423] -to "light_state:light_state|red_state_light[29]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[424] -to "light_state:light_state|red_state_light[2]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[425] -to "light_state:light_state|red_state_light[30]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[426] -to "light_state:light_state|red_state_light[31]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[427] -to "light_state:light_state|red_state_light[3]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[428] -to "light_state:light_state|red_state_light[4]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[429] -to "light_state:light_state|red_state_light[5]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[430] -to "light_state:light_state|red_state_light[6]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[431] -to "light_state:light_state|red_state_light[7]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[432] -to "light_state:light_state|red_state_light[8]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[433] -to "light_state:light_state|red_state_light[9]" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[434] -to "light_state:light_state|resetN" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[435] -to "light_state:light_state|restart_light" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[436] -to "periphery_control:periphery_control_inst|A" -section_id AMEN
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[437] -to "periphery_control:periphery_control_inst|B" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=438" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=438" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=438" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id AMEN
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=1339" -section_id AMEN
+set_global_assignment -name VERILOG_FILE led_control.v
+set_global_assignment -name SLD_FILE db/lightning_unit_st_auto_stripped.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
